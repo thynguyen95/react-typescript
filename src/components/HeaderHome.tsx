@@ -25,7 +25,7 @@ const HeaderHome = (props: Props) => {
             </Navbar.Brand>
             <Navbar.Toggle />
             <Navbar.Collapse>
-                <Navbar.Link>
+                <Navbar>
                     <NavLink
                         to="/home"
                         className={
@@ -36,8 +36,8 @@ const HeaderHome = (props: Props) => {
                     >
                         Home
                     </NavLink>
-                </Navbar.Link>
-                <Navbar.Link>
+                </Navbar>
+                <Navbar>
                     <NavLink
                         to="/login"
                         className={({ isActive }) =>
@@ -48,8 +48,8 @@ const HeaderHome = (props: Props) => {
                     >
                         Login
                     </NavLink>
-                </Navbar.Link>
-                <Navbar.Link>
+                </Navbar>
+                <Navbar>
                     <NavLink
                         to="/register"
                         className={({ isActive }) =>
@@ -60,7 +60,7 @@ const HeaderHome = (props: Props) => {
                     >
                         Register
                     </NavLink>
-                </Navbar.Link>
+                </Navbar>
             </Navbar.Collapse>
         </Navbar>
     );

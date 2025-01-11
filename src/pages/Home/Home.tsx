@@ -7,6 +7,7 @@ import {
     ProductModelType,
 } from "../../redux/reducers/productReducer";
 import ProductCard from "../../components/ProductCard";
+import useData from "../../Hook/useData";
 
 type Props = {};
 
@@ -16,6 +17,8 @@ const Home = (props: Props) => {
     // để any sẽ lấy được state => ko nên
     const number = useSelector((state: RootState) => state.number);
 
+    // trước khi tách hook
+    /*
     const { arrProduct } = useSelector(
         (state: RootState) => state.productReducer
     );
@@ -30,6 +33,10 @@ const Home = (props: Props) => {
     useEffect(() => {
         getAllProduct();
     }, []);
+    */
+
+    //sau khi tách hook
+    const { data } = useData();
 
     return (
         <div className="container mx-auto">
@@ -37,7 +44,7 @@ const Home = (props: Props) => {
 
             <h3>Danh sách sản phẩm</h3>
             <div className="grid grid-cols-3 gap-3">
-                {arrProduct.map((item: ProductModelType) => {
+                {data.map((item: ProductModelType) => {
                     return <ProductCard product={item} />;
                 })}
             </div>
